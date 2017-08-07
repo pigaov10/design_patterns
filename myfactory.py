@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from math import sqrt
 
 
 class Area(object):
@@ -16,6 +17,7 @@ class Area(object):
         return tipo_calculo == cls.TYPE
 
 class Quadrado(Area):
+    """ s = l² """
     TYPE = 'Quadrado'
 
     def calcular(self):
@@ -25,7 +27,9 @@ class TrianguloRetangulo(Area):
     TYPE = 'TrianguloRetangulo'
 
     def calcular(self):
-        return (self.largura ** 2) + (self.comprimento ** 2) ** 2
+        """ c² = a² + b² """
+        quadrado_dos_catetos = (self.largura ** 2) + (self.comprimento ** 2)
+        return sqrt(quadrado_dos_catetos)
 
 
 # factory
@@ -42,5 +46,5 @@ class AreaFactory(object):
                 return obj(self.largura, self.comprimento).calcular()
 
 if __name__ == '__main__':
-    calculo = AreaFactory('TrianguloRetangulo', 5, 5)
+    calculo = AreaFactory('TrianguloRetangulo', 10, 10)
     print(calculo.rodar())
