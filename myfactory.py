@@ -34,6 +34,11 @@ class TrianguloRetangulo(Area):
 
 # factory
 class AreaFactory(object):
+    """ Calcula Área de objetos geometricos
+    Keywords
+    largura --
+    comprimento --
+    """
     TIPOS_CALCULO = [Quadrado, TrianguloRetangulo]
     def __init__(self, tipo, largura, comprimento):
         self.tipo = tipo
