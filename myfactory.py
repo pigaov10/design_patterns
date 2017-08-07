@@ -25,7 +25,7 @@ class TrianguloRetangulo(Area):
     TYPE = 'TrianguloRetangulo'
 
     def calcular(self):
-        return 'Pitagoras c2 = a2 + b2'
+        return (self.largura ** 2) + (self.comprimento ** 2) ** 2
 
 
 # factory
@@ -42,5 +42,5 @@ class AreaFactory(object):
                 return obj(self.largura, self.comprimento).calcular()
 
 if __name__ == '__main__':
-    calculo = AreaFactory('Quadrado', 5, 5)
+    calculo = AreaFactory('TrianguloRetangulo', 5, 5)
     print(calculo.rodar())
